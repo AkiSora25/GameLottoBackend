@@ -7,12 +7,27 @@ public class Videogame extends BaseEntity
 {
 	private String name;
 	private String platform;
-	private String genres;
-	private int releaseYear;
+	private String genre;
+	private int releaseDate;
 	private String developer;
-	private String publisher;
-	private String soundtrack;
 	private String perspective;
+	private String cover;
+	private String soundtrack;
+
+	public void setGenre(String genre)
+	{
+		this.genre = genre;
+	}
+
+	public String getCover()
+	{
+		return cover;
+	}
+
+	public void setCover(String cover)
+	{
+		this.cover = cover;
+	}
 
 	public String getName() {return name;}
 
@@ -22,21 +37,13 @@ public class Videogame extends BaseEntity
 
 	public void setPlatform(String platform) {this.platform = platform;}
 
-	public String getGenres() {return genres;}
+	public int getReleaseDate() {return releaseDate;}
 
-	public void setGenres(String genres) {this.genres = genres;}
-
-	public int getReleaseYear() {return releaseYear;}
-
-	public void setReleaseYear(int releaseYear) {this.releaseYear = releaseYear;}
+	public void setReleaseDate(int releaseDate) {this.releaseDate = releaseDate;}
 
 	public String getDeveloper() {return developer;}
 
 	public void setDeveloper(String developer) {this.developer = developer;}
-
-	public String getPublisher() {return publisher;}
-
-	public void setPublisher(String publisher) {this.publisher = publisher;}
 
 	public String getSoundtrack() {return soundtrack;}
 
