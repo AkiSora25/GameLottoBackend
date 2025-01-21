@@ -14,20 +14,14 @@ public class Videogame extends BaseEntity
 	private String cover;
 	private String soundtrack;
 
-	public void setGenre(String genre)
-	{
-		this.genre = genre;
-	}
 
-	public String getCover()
-	{
-		return cover;
-	}
+	public String getGenre() {return genre;}
 
-	public void setCover(String cover)
-	{
-		this.cover = cover;
-	}
+	public void setGenre(String genre) {this.genre = genre;}
+
+	public String getCover() {return cover;}
+
+	public void setCover(String cover) {this.cover = cover;}
 
 	public String getName() {return name;}
 

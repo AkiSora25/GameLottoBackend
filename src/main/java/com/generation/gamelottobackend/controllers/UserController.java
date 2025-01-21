@@ -1,6 +1,7 @@
 package com.generation.gamelottobackend.controllers;
 
 
+import com.generation.gamelottobackend.controllers.helper.ControllerHelper;
 import com.generation.gamelottobackend.model.dto.DTOConverterUser;
 import com.generation.gamelottobackend.model.dto.UserDTOReqLog;
 import com.generation.gamelottobackend.model.dto.UserDTOReqReg;
@@ -63,4 +64,13 @@ public class UserController
     {
         return e.getMessage();
     }
+
+    private static User instance;
+    public static User getInstance()
+    {
+        if(instance == null)
+            instance = new User();
+        return instance;
+    }
+
 }

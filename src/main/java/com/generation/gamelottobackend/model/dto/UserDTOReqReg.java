@@ -2,9 +2,9 @@ package com.generation.gamelottobackend.model.dto;
 
 public class UserDTOReqReg
 {
-    private String email;
-    private String password;
     private String username;
+    private String password;
+    private String email;
 
     public String getEmail() {return email;}
 
