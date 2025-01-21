@@ -5,6 +5,7 @@ import com.generation.gamelottobackend.model.dto.VideogameDTORespCompl;
 import com.generation.gamelottobackend.model.dto.VideogameDTORespCover;
 import com.generation.gamelottobackend.model.dto.VideogameDTORespSound;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,22 +18,15 @@ public class VideogameController
     @Autowired
     ControllerHelper ch;
 
-    @GetMapping("/{id}")
-    public VideogameDTORespCompl getVideogameById(@PathVariable long id)
+    @GetMapping("/{id}/{type}")
+    public ResponseEntity<?> getVideogameById(@PathVariable long id, @PathVariable(required = false) String type)
     {
-        return ch.getOneDtoCompl(id);
-    }
+        switch (type)
+        {
+            case "cover"-> {return ResponseEntity.ok(ch.getOneDtoCover(id));}
+            case "soundtrack"-> {return ResponseEntity.ok(ch.getOneDtoSound(id));}
+            default -> {return ResponseEntity.ok(ch.getOneDtoCompl(id));}
+        }
 
-    @GetMapping("/{id}")
-    public VideogameDTORespCover getVideogameByCover(@PathVariable long id)
-    {
-        return ch.getOneDtoCover(id);
     }
-
-    @GetMapping("/{id}")
-    public VideogameDTORespSound getVideogameBySound(@PathVariable long id)
-    {
-        return ch.getOneDtoSound(id);
-    }
-
 }
