@@ -1,4 +1,6 @@
 package com.generation.gamelottobackend.controllers;
 
-public class VideogameController {
+
+public class VideogameController
+{
 }
