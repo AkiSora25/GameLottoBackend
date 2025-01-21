@@ -1,6 +1,8 @@
 package com.generation.gamelottobackend.controllers.helper;
 
 import com.generation.gamelottobackend.controllers.VideogameController;
+import com.generation.gamelottobackend.controllers.exceptions.CoverNotFoundException;
+import com.generation.gamelottobackend.controllers.exceptions.SoundtrackNotFoundException;
 import com.generation.gamelottobackend.controllers.exceptions.VideogameNotFoundException;
 import com.generation.gamelottobackend.model.dto.DTOConverterVideogame;
 import com.generation.gamelottobackend.model.dto.VideogameDTORespCompl;
@@ -45,7 +47,7 @@ public class ControllerHelperImpl implements ControllerHelper
 			//.get() tira fuori l'oggetto dall'optional
 			return dtoConverter.toDTOCover(game.get());
 
-		throw new VideogameNotFoundException(id);
+		throw new CoverNotFoundException(id);
 	}
 
 	@Override
@@ -57,6 +59,6 @@ public class ControllerHelperImpl implements ControllerHelper
 			//.get() tira fuori l'oggetto dall'optional
 			return dtoConverter.toDTOSound(game.get());
 
-		throw new VideogameNotFoundException(id);
+		throw new SoundtrackNotFoundException(id);
 	}
 }
