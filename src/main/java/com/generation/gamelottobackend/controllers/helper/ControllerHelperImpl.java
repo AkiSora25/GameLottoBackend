@@ -1,4 +1,5 @@
 package com.generation.gamelottobackend.controllers.helper;
 
-public class ControllerHelperImpl {
+public class ControllerHelperImpl
+{
 }

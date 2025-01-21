@@ -54,7 +54,7 @@ public class DTOConverterVideogame
        VideogameDTORespSound dto= new VideogameDTORespSound();
        dto.setName(v.getName());
        dto.setSoundtrack(v.getSoundtrack());
-       
+
        return dto;
     }
 }
