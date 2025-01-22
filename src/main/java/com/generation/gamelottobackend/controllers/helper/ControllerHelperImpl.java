@@ -1,17 +1,14 @@
 package com.generation.gamelottobackend.controllers.helper;
 
-import com.generation.gamelottobackend.controllers.VideogameController;
-import com.generation.gamelottobackend.controllers.exceptions.CoverNotFoundException;
-import com.generation.gamelottobackend.controllers.exceptions.SoundtrackNotFoundException;
-import com.generation.gamelottobackend.controllers.exceptions.SpecNotFoundException;
-import com.generation.gamelottobackend.controllers.exceptions.VideogameNotFoundException;
+import com.generation.gamelottobackend.controllers.exceptions.*;
 import com.generation.gamelottobackend.model.dto.*;
 import com.generation.gamelottobackend.model.entities.Videogame;
+import com.generation.gamelottobackend.model.repositories.PGRepository;
 import com.generation.gamelottobackend.model.repositories.VideogameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.generation.gamelottobackend.model.entities.PG;
 
-import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -21,7 +18,12 @@ public class ControllerHelperImpl implements ControllerHelper
 	VideogameRepository vRepo;
 
 	@Autowired
+	PGRepository pRepo;
+
+	@Autowired
 	DTOConverterVideogame dtoConverter;
+
+	DTOConverterPG dtoConverterPG;
 
 
 	@Override
@@ -70,5 +72,16 @@ public class ControllerHelperImpl implements ControllerHelper
 			return dtoConverter.toDTOSpec(game.get());
 
 		throw new SpecNotFoundException(id);
+	}
+
+	public PGDTOResp getOneDtoPG(long id)
+	{
+		Optional<PG> pg = pRepo.findById(id);
+		//scatola che può contenere o no l'elemento
+		if (pg.isPresent())//isPresent() da true se l'optional è pieno
+			//.get() tira fuori l'oggetto dall'optional
+			return dtoConverterPG.toDTOPG(pg.get());
+
+		throw new PGNotFoundException(id);
 	}
 }

@@ -1,0 +1,23 @@
+package com.generation.gamelottobackend.controllers;
+
+import com.generation.gamelottobackend.controllers.helper.ControllerHelper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/api/pgs")
+public class PGController
+{
+	@Autowired
+	ControllerHelper ch;
+
+	@GetMapping("/{id}")
+	public ResponseEntity<?> getPGById(@PathVariable long id)
+	{
+		return ResponseEntity.ok(ch.getOneDtoPG(id));
+	}
+}

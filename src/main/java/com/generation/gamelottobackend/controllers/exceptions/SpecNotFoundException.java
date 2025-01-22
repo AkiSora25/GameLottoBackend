@@ -4,6 +4,6 @@ public class SpecNotFoundException extends RuntimeException
 {
 	public SpecNotFoundException(long id)
 	{
-		super("Soundtrack with id " + id + " not found");
+		super("Specific with id " + id + " not found");
 	}
 }
