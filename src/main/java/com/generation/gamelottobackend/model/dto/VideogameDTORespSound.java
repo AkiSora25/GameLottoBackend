@@ -2,7 +2,7 @@ package com.generation.gamelottobackend.model.dto;
 
 public class VideogameDTORespSound
 {
-    private long id;
+    private Long id;
     private String name;
     private String soundtrack;
 

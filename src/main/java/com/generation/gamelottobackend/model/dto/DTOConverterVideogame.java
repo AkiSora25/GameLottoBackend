@@ -57,4 +57,17 @@ public class DTOConverterVideogame
 
        return dto;
     }
+
+    public VideogameDTORespSpec toDTOSpec(Videogame v)
+    {
+        VideogameDTORespSpec dto= new VideogameDTORespSpec();
+        dto.setName(v.getName());
+        dto.setPlatform(v.getPlatform());
+        dto.setGenre(v.getGenre());
+        dto.setReleaseDate(v.getReleaseDate());
+        dto.setDeveloper(v.getDeveloper());
+        dto.setPerspective(v.getPerspective());
+
+        return dto;
+    }
 }

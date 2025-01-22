@@ -3,11 +3,9 @@ package com.generation.gamelottobackend.controllers.helper;
 import com.generation.gamelottobackend.controllers.VideogameController;
 import com.generation.gamelottobackend.controllers.exceptions.CoverNotFoundException;
 import com.generation.gamelottobackend.controllers.exceptions.SoundtrackNotFoundException;
+import com.generation.gamelottobackend.controllers.exceptions.SpecNotFoundException;
 import com.generation.gamelottobackend.controllers.exceptions.VideogameNotFoundException;
-import com.generation.gamelottobackend.model.dto.DTOConverterVideogame;
-import com.generation.gamelottobackend.model.dto.VideogameDTORespCompl;
-import com.generation.gamelottobackend.model.dto.VideogameDTORespCover;
-import com.generation.gamelottobackend.model.dto.VideogameDTORespSound;
+import com.generation.gamelottobackend.model.dto.*;
 import com.generation.gamelottobackend.model.entities.Videogame;
 import com.generation.gamelottobackend.model.repositories.VideogameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,5 +58,17 @@ public class ControllerHelperImpl implements ControllerHelper
 			return dtoConverter.toDTOSound(game.get());
 
 		throw new SoundtrackNotFoundException(id);
+	}
+
+	@Override
+	public VideogameDTORespSpec getOneDtoSpec(long id)
+	{
+		Optional<Videogame> game = vRepo.findById(id);
+		//scatola che può contenere o no l'elemento
+		if (game.isPresent())//isPresent() da true se l'optional è pieno
+			//.get() tira fuori l'oggetto dall'optional
+			return dtoConverter.toDTOSpec(game.get());
+
+		throw new SpecNotFoundException(id);
 	}
 }

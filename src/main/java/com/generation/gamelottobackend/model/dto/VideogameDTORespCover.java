@@ -2,7 +2,7 @@ package com.generation.gamelottobackend.model.dto;
 
 public class VideogameDTORespCover
 {
-    private long id;
+    private Long id;
     private String name;
     private String cover;
 
