@@ -28,16 +28,6 @@ public class PGDTOReq
 		this.img = img;
 	}
 
-	public Videogame getVideogame()
-	{
-		return videogame;
-	}
-
-	public void setVideogame(Videogame videogame)
-	{
-		this.videogame = videogame;
-	}
-
 	public String getDescription()
 	{
 		return description;
