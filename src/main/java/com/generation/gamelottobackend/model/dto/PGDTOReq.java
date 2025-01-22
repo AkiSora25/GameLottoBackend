@@ -6,7 +6,6 @@ public class PGDTOReq
 {
 	private String name;
 	private String img;
-	private Videogame videogame;
 	private String description;
 
 	public String getName()

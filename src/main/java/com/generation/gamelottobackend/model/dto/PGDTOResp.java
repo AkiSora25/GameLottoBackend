@@ -7,7 +7,6 @@ public class PGDTOResp
 	private Long id;
 	private String name;
 	private String img;
-	private Videogame videogame;
 	private String description;
 
 	public Long getId()
@@ -38,16 +37,6 @@ public class PGDTOResp
 	public void setImg(String img)
 	{
 		this.img = img;
-	}
-
-	public Videogame getVideogame()
-	{
-		return videogame;
-	}
-
-	public void setVideogame(Videogame videogame)
-	{
-		this.videogame = videogame;
 	}
 
 	public String getDescription()

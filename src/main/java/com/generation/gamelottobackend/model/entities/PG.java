@@ -4,7 +4,6 @@ public class PG extends BaseEntity
 {
 	private String name;
 	private String img;
-	private Videogame videogame;
 	private String description;
 
 	public String getName() {return name;}
@@ -14,10 +13,6 @@ public class PG extends BaseEntity
 	public String getImg() {return img;}
 
 	public void setImg(String img) {this.img = img;}
-
-	public Videogame getVideogame() {return videogame;}
-
-	public void setVideogame(Videogame videogame) {this.videogame = videogame;}
 
 	public String getDescription() {return description;}
 
