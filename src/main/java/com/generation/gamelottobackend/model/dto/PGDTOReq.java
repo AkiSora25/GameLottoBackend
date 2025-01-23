@@ -6,6 +6,7 @@ public class PGDTOReq
 {
 	private String name;
 	private String img;
+	private String game;
 	private String description;
 
 	public String getName()
@@ -37,4 +38,8 @@ public class PGDTOReq
 	{
 		this.description = description;
 	}
+
+	public String getGame() {return game;}
+
+	public void setGame(String game) {this.game = game;}
 }

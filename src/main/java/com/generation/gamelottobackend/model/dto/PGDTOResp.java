@@ -7,12 +7,10 @@ public class PGDTOResp
 	private Long id;
 	private String name;
 	private String img;
+	private String game;
 	private String description;
 
-	public Long getId()
-	{
-		return id;
-	}
+	public Long getId() {return id;}
 
 	public void setId(Long id)
 	{
@@ -48,4 +46,8 @@ public class PGDTOResp
 	{
 		this.description = description;
 	}
+
+	public String getGame() {return game;}
+
+	public void setGame(String game) {this.game = game;}
 }

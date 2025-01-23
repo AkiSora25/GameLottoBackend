@@ -12,6 +12,7 @@ public class DTOConverterPG
 		PG.setName(dto.getName());
 		PG.setImg(dto.getImg());
 		PG.setDescription(dto.getDescription());
+		PG.setDescription(dto.getDescription());
 
 		return PG;
 	}
@@ -21,6 +22,7 @@ public class DTOConverterPG
 		PGDTOResp dto= new PGDTOResp();
 		dto.setName(c.getName());
 		dto.setImg(c.getImg());
+		dto.setGame(c.getGame());
 		dto.setDescription(c.getDescription());
 
 		return dto;
