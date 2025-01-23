@@ -23,6 +23,7 @@ public class ControllerHelperImpl implements ControllerHelper
 	@Autowired
 	DTOConverterVideogame dtoConverter;
 
+	@Autowired
 	DTOConverterPG dtoConverterPG;
 
 
@@ -74,6 +75,7 @@ public class ControllerHelperImpl implements ControllerHelper
 		throw new SpecNotFoundException(id);
 	}
 
+	@Override
 	public PGDTOResp getOneDtoPG(long id)
 	{
 		Optional<PG> pg = pRepo.findById(id);
