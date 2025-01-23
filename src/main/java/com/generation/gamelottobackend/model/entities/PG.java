@@ -1,5 +1,8 @@
 package com.generation.gamelottobackend.model.entities;
 
+import jakarta.persistence.Entity;
+
+@Entity
 public class PG extends BaseEntity
 {
 	private String name;
