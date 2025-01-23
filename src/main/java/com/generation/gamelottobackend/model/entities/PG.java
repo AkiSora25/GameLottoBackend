@@ -1,9 +1,13 @@
 package com.generation.gamelottobackend.model.entities;
 
+import jakarta.persistence.Entity;
+
+@Entity
 public class PG extends BaseEntity
 {
 	private String name;
 	private String img;
+	private String game;
 	private String description;
 
 	public String getName() {return name;}
@@ -17,4 +21,8 @@ public class PG extends BaseEntity
 	public String getDescription() {return description;}
 
 	public void setDescription(String description) {this.description = description;}
+
+	public String getGame() {return game;}
+
+	public void setGame(String game) {this.game = game;}
 }

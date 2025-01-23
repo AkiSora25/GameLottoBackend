@@ -23,6 +23,7 @@ public class ControllerHelperImpl implements ControllerHelper
 	@Autowired
 	DTOConverterVideogame dtoConverter;
 
+	@Autowired
 	DTOConverterPG dtoConverterPG;
 
 
