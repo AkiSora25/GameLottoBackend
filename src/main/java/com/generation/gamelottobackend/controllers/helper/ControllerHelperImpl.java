@@ -101,4 +101,13 @@ public class ControllerHelperImpl implements ControllerHelper
 			default -> {return ResponseEntity.ok(dtoConverter.toDTOSpec(v));}
 		}
 	}
+
+	@Override
+	public ResponseEntity<?> getRandom2(List<Long> ids)
+	{
+		List<PG> all = pRepo.findAllByIdNotIn(ids);
+		PG p= all.get((int) (Math.random() * all.size()));
+		return ResponseEntity.ok(dtoConverterPG.toDTOPG(p));
+	}
+
 }

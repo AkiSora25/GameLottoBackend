@@ -18,4 +18,6 @@ public interface ControllerHelper
 	PGDTOResp getOneDtoPG(long id);
 
 	ResponseEntity<?> getRandom(String type, List<Long> ids);
+
+	ResponseEntity<?> getRandom2(List<Long> ids);
 }
