@@ -36,4 +36,10 @@ public class VideogameController
         return ch.getRandom(type, ids);
     }
 
+    @GetMapping("/names")
+    public List<String> getAllNames()
+    {
+        return ch.getAllNames();
+    }
+
 }
