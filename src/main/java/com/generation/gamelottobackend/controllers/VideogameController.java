@@ -7,10 +7,9 @@ import com.generation.gamelottobackend.model.dto.VideogameDTORespSound;
 import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/videogames")
@@ -29,6 +28,12 @@ public class VideogameController
             case "spec"->{return ResponseEntity.ok(ch.getOneDtoSpec(id));}
             default -> {return ResponseEntity.ok(ch.getOneDtoCompl(id));}
         }
-
     }
+
+    @PostMapping("/{type}")
+    public ResponseEntity<?> getRandom(@PathVariable String type, @RequestBody List<Long> ids)
+    {
+        return ch.getRandom(type, ids);
+    }
+
 }

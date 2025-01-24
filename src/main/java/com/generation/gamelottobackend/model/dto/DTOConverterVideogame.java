@@ -26,6 +26,7 @@ public class DTOConverterVideogame
     public VideogameDTORespCompl toDTOCompl(Videogame v)
     {
         VideogameDTORespCompl dto= new VideogameDTORespCompl();
+        dto.setId(v.getId());
         dto.setName(v.getName());
         dto.setPlatform(v.getPlatform());
         dto.setGenre(v.getGenre());
@@ -41,6 +42,7 @@ public class DTOConverterVideogame
     public VideogameDTORespCover toDTOCover(Videogame v)
     {
         VideogameDTORespCover dto = new VideogameDTORespCover();
+        dto.setId(v.getId());
         dto.setName(v.getName());
         dto.setCover(v.getCover());
 
@@ -52,6 +54,7 @@ public class DTOConverterVideogame
     public VideogameDTORespSound toDTOSound(Videogame v)
     {
        VideogameDTORespSound dto= new VideogameDTORespSound();
+       dto.setId(v.getId());
        dto.setName(v.getName());
        dto.setSoundtrack(v.getSoundtrack());
 
@@ -61,6 +64,7 @@ public class DTOConverterVideogame
     public VideogameDTORespSpec toDTOSpec(Videogame v)
     {
         VideogameDTORespSpec dto= new VideogameDTORespSpec();
+        dto.setId(v.getId());
         dto.setName(v.getName());
         dto.setPlatform(v.getPlatform());
         dto.setGenre(v.getGenre());

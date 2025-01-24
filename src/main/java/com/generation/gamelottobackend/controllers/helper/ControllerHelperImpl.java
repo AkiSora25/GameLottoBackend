@@ -6,9 +6,11 @@ import com.generation.gamelottobackend.model.entities.Videogame;
 import com.generation.gamelottobackend.model.repositories.PGRepository;
 import com.generation.gamelottobackend.model.repositories.VideogameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import com.generation.gamelottobackend.model.entities.PG;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -85,5 +87,18 @@ public class ControllerHelperImpl implements ControllerHelper
 			return dtoConverterPG.toDTOPG(pg.get());
 
 		throw new PGNotFoundException(id);
+	}
+
+	@Override
+	public ResponseEntity<?> getRandom(String type, List<Long> ids)
+	{
+		List<Videogame> all= vRepo.findAllByIdNotIn(ids);
+		Videogame v= all.get((int) (Math.random() * all.size()));
+		switch (type)
+		{
+			case "cover"-> {return ResponseEntity.ok(dtoConverter.toDTOCover(v));}
+			case "soundtrack"-> {return ResponseEntity.ok(dtoConverter.toDTOSound(v));}
+			default -> {return ResponseEntity.ok(dtoConverter.toDTOSpec(v));}
+		}
 	}
 }

@@ -20,6 +20,7 @@ public class DTOConverterPG
 	public PGDTOResp toDTOPG(PG c)
 	{
 		PGDTOResp dto= new PGDTOResp();
+		dto.setId(c.getId());
 		dto.setName(c.getName());
 		dto.setImg(c.getImg());
 		dto.setGame(c.getGame());
