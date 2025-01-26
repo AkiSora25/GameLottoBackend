@@ -65,12 +65,12 @@ public class UserController
         return e.getMessage();
     }
 
-    private static User instance;
-    public static User getInstance()
-    {
-        if(instance == null)
-            instance = new User();
-        return instance;
-    }
+    //private static User instance;
+    //public static User getInstance()
+    //{
+    //    if(instance == null)
+    //        instance = new User();
+    //    return instance;
+    //}
 
 }

@@ -110,4 +110,9 @@ public class ControllerHelperImpl implements ControllerHelper
 		return ResponseEntity.ok(dtoConverterPG.toDTOPG(p));
 	}
 
+	@Override
+	public List<String> getAllNames() {
+		return vRepo.findAll().stream().map(v->v.getName()).toList();
+	}
+
 }

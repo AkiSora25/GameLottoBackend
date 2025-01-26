@@ -20,4 +20,6 @@ public interface ControllerHelper
 	ResponseEntity<?> getRandom(String type, List<Long> ids);
 
 	ResponseEntity<?> getRandom2(List<Long> ids);
+
+    List<String> getAllNames();
 }
