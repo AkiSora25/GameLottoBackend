@@ -25,4 +25,7 @@ public class PGController
 	{
 		return ch.getRandom2(ids);
 	}
+
+	@GetMapping("/games")
+	public List <String> getAllGames(){return ch.getAllGames();}
 }

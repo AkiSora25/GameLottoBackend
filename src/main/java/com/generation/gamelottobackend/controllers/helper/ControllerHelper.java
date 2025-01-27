@@ -22,4 +22,6 @@ public interface ControllerHelper
 	ResponseEntity<?> getRandom2(List<Long> ids);
 
     List<String> getAllNames();
+
+	List<String> getAllGames();
 }
