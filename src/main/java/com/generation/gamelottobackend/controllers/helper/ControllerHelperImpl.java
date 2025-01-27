@@ -115,6 +115,6 @@ public class ControllerHelperImpl implements ControllerHelper
 		return vRepo.findAll().stream().map(v->v.getName()).toList();
 	}
 
-	public List<String> getAllGames(){return pRepo.findAll().stream().map(v->v.getName()).toList();}
+	public List<String> getAllGames(){return pRepo.findAll().stream().map(p->p.getGame()).toList();}
 
 }
